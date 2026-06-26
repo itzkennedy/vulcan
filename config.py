@@ -2,8 +2,10 @@
 # VULCAN - Configuration File
 # ============================================
 # Built by @nechecodes
-
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # --- VULCAN IDENTITY ---
 AGENT_NAME = "Vulcan"
@@ -14,9 +16,9 @@ AGENT_TAGLINE = "The AI That Builds, Fixes & Deploys"
 OFFLINE_MODEL = "qwen2.5-coder:1.5b"
 ONLINE_MODEL = "deepseek-chat"
 
-# --- API KEYS ---
-GEMINI_API_KEY = ""
-DEEPSEEK_API_KEY = ""
+# --- API KEYS (loaded from .env, never hardcoded here) ---
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "")
 
 # --- AGENT SETTINGS ---
 MAX_LOOP_COUNT = 2
